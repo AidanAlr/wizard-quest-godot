@@ -1,11 +1,11 @@
 [gd_scene load_steps=7 format=3 uid="uid://nkyl3cm4l4k7"]
 
 [ext_resource type="PackedScene" uid="uid://d1pvjva6nkslq" path="res://GameComponents/terrain.tscn" id="1_w0g5n"]
-[ext_resource type="PackedScene" uid="uid://6udyd4ij0p0l" path="res://sword.tscn" id="2_jns00"]
+[ext_resource type="PackedScene" uid="uid://6udyd4ij0p0l" path="res://GameComponents/sword.tscn" id="2_jns00"]
 [ext_resource type="PackedScene" uid="uid://c20t17hgw3ngv" path="res://GameComponents/wizard.tscn" id="2_qapka"]
 [ext_resource type="PackedScene" uid="uid://cks67g8pn7xya" path="res://GameComponents/player.tscn" id="3_uaybl"]
 [ext_resource type="Texture2D" uid="uid://b7ylt03cp8jrh" path="res://Sprites/sword.png" id="4_mq8nf"]
-[ext_resource type="PackedScene" uid="uid://ktalbjce1elb" path="res://bulldog.tscn" id="4_wawfu"]
+[ext_resource type="PackedScene" uid="uid://ktalbjce1elb" path="res://GameComponents/bulldog.tscn" id="4_wawfu"]
 
 [node name="Game" type="Node2D"]
 
