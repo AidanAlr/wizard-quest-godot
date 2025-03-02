@@ -1,0 +1,41 @@
+youtube=
+
+The game is made using the godot engine, utilising the godot scripting language GDScript.
+
+The project is structured in the following way:
+
+ .
+└──  forest-game
+    ├──  alagard.ttf
+    ├──  alagard.ttf.import
+    ├──  bulldog.tscn
+    ├──  GameComponents
+    │   ├──  bulldog.gd
+    │   ├──  camera_2d.gd
+    │   ├──  game.tscn
+    │   ├──  instruction_label.gd
+    │   ├──  player.gd
+    │   ├──  player.tscn
+    │   ├──  sword.gd
+    │   ├──  terrain.tscn
+    │   ├──  wizard.gd
+    │   └──  wizard.tscn
+    ├──  interaction_components
+    │   ├──  interactable.gd
+    │   ├──  interactable.tscn
+    │   ├──  interacting_component.gd
+    │   └──  interacting_component.tscn
+    ├──  project.godot
+    ├──  Sprites
+
+The flow of the game is as follows: interact with the wizard, accept the wizards quest, explore the map, find the sword, collect the sword, deliver sword to wizard, find easter egg.
+
+The game is composed of the following "scenes":
+Interacting Component: Represents the interacting object i.e. player. Contains an InteractionRange which is an Area2D and a collision shape.
+Interactable Component: Represents the object that the player can interact with. When entering the InteractionRange, interaction label of the player changes to describe what can interact.
+Terrain: Composed of background, foreground 1 and foreground 2. Tiles placed in the background can be walked through. Foreground tiles cannot.
+Player: Represents the player, has a collision shape  and has an interacting component.
+Wizard: Wizard has a sprite and is an interactable, i.e. has an InteractionRange and provides interact method. Logic for voice lines is defind in wizard.gd, depends on what actions have occured.
+Sword: Sword, hidden in the woods. Comprised of a sprite, is interactable. Upon interacting with the sword, it is hidden.
+Sword2: Invisible sword in the wizards hand which appears when Sword delivered by player.
+Bulldog: Easter egg character. Hidden in a hole in bottom of the map. Upon interacting he comes out and shouts out BU and CS622.

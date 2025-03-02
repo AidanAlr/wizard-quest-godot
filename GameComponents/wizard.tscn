@@ -1,0 +1,51 @@
+[gd_scene load_steps=8 format=3 uid="uid://c20t17hgw3ngv"]
+
+[ext_resource type="Texture2D" uid="uid://bieajxdj11dq7" path="res://Sprites/wizard.png" id="1_dvc84"]
+[ext_resource type="Script" path="res://GameComponents/wizard.gd" id="1_pewlk"]
+[ext_resource type="PackedScene" uid="uid://dcf28b7x3bkgu" path="res://interaction_components/interactable.tscn" id="2_r7sbl"]
+[ext_resource type="FontFile" uid="uid://fg4la28g8ikw" path="res://alagard.ttf" id="4_t5eti"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ylw1c"]
+size = Vector2(443, 885)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0hgfq"]
+radius = 754.793
+
+[sub_resource type="LabelSettings" id="LabelSettings_ytnw7"]
+font = ExtResource("4_t5eti")
+font_size = 150
+outline_size = 20
+outline_color = Color(0.05, 0.05, 0.05, 1)
+shadow_size = 45
+shadow_color = Color(0, 0, 0, 0.662745)
+
+[node name="Wizard" type="Node2D"]
+script = ExtResource("1_pewlk")
+
+[node name="AnimatableBody2D" type="AnimatableBody2D" parent="."]
+collision_layer = 3
+collision_mask = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="AnimatableBody2D"]
+texture = ExtResource("1_dvc84")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D"]
+position = Vector2(10.5, 40.5)
+shape = SubResource("RectangleShape2D_ylw1c")
+
+[node name="Interactable" parent="." instance=ExtResource("2_r7sbl")]
+interact_name = "speak to wizard"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable"]
+shape = SubResource("CircleShape2D_0hgfq")
+
+[node name="WizardSpeech" type="Label" parent="."]
+offset_left = -485.0
+offset_top = -1093.0
+offset_right = 551.0
+offset_bottom = -868.0
+text = "test"
+label_settings = SubResource("LabelSettings_ytnw7")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3

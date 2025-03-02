@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://6udyd4ij0p0l"]
+
+[ext_resource type="Script" path="res://GameComponents/sword.gd" id="1_aj1sf"]
+[ext_resource type="Texture2D" uid="uid://b7ylt03cp8jrh" path="res://Sprites/sword.png" id="2_1fsb2"]
+[ext_resource type="PackedScene" uid="uid://dcf28b7x3bkgu" path="res://interaction_components/interactable.tscn" id="3_mnfjt"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_54h30"]
+
+[node name="Sword" type="Node2D"]
+script = ExtResource("1_aj1sf")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(748, 914)
+scale = Vector2(0.275862, 0.275862)
+texture = ExtResource("2_1fsb2")
+
+[node name="Interactable" parent="Sprite2D" instance=ExtResource("3_mnfjt")]
+position = Vector2(-2711.5, -3313.25)
+scale = Vector2(3.625, 3.625)
+interact_name = "Pickup Sword"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/Interactable"]
+position = Vector2(751, 910)
+scale = Vector2(10, 10)
+shape = SubResource("CircleShape2D_54h30")

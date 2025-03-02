@@ -1,0 +1,46 @@
+[gd_scene load_steps=8 format=3 uid="uid://ktalbjce1elb"]
+
+[ext_resource type="Script" path="res://GameComponents/bulldog.gd" id="1_2vbe0"]
+[ext_resource type="Texture2D" uid="uid://2a4tbfk85dn" path="res://Sprites/terrier.png" id="2_tri37"]
+[ext_resource type="PackedScene" uid="uid://dcf28b7x3bkgu" path="res://interaction_components/interactable.tscn" id="3_6sdla"]
+[ext_resource type="FontFile" uid="uid://fg4la28g8ikw" path="res://alagard.ttf" id="4_pno8d"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_q6umi"]
+radius = 57.6902
+
+[sub_resource type="LabelSettings" id="LabelSettings_es1gr"]
+font = ExtResource("4_pno8d")
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_klp8b"]
+radius = 20.0
+height = 66.0
+
+[node name="Bulldog" type="Node2D"]
+script = ExtResource("1_2vbe0")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-191, 1117)
+scale = Vector2(0.017334, 0.017334)
+texture = ExtResource("2_tri37")
+
+[node name="Interactable" parent="Sprite2D" instance=ExtResource("3_6sdla")]
+interact_name = "ask hello?"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/Interactable"]
+position = Vector2(115.38, -115.38)
+scale = Vector2(50, 50)
+shape = SubResource("CircleShape2D_q6umi")
+
+[node name="BulldogSpeech" type="Label" parent="."]
+offset_left = -228.0
+offset_top = 1053.0
+offset_right = -140.0
+offset_bottom = 1076.0
+text = "BU STRONG!"
+label_settings = SubResource("LabelSettings_es1gr")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-192, 1136)
+shape = SubResource("CapsuleShape2D_klp8b")
